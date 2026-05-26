@@ -60,3 +60,16 @@ Obrazy są tagowane w dwóch wersjach:
 
 - `latest` – najnowsza wersja
 - `sha-<commit>` – wersja powiązana z konkretnym commit
+
+---
+
+## Cache
+
+W pipeline zastosowano cache oparty o DockerHub
+
+- `type=registry` – cache przechowywany w zewnętrznym rejestrze
+- `mode=max` – maksymalna ilość warstw cache dla przyspieszenia kolejnych buildów
+
+Cache jest zapisywany w dedykowanym publicznym repozytorium DockerHub i wykorzystywany w kolejnych uruchomieniach workflow w celu skrócenia czasu budowania obrazu.
+
+---
