@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fascinate&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.12/css/weather-icons-wind.css">
+    <title>Pogoda</title>
+</head>
+<div class="container">
+<div id="menu">
+<body>
+    <h2>Pogoda</h2>
+
+<select id="country">
+    <option value="" selected>Wybierz kraj</option>
+    {{range .}}
+    <option value="{{.}}">{{.}}</option>
+    {{end}}
+</select>
+
+<br><br>
+
+<select id="city" disabled>
+    <option value="">Wybierz miasto</option>
+</select>
+
+<br><br>
+
+<script src="/scripts/script.js"></script>
+<button onclick="getWeather()">Pobierz pogodę</button>
+</div>
+
+<div id="result"></div>
+</div>
+<img src="/css/sky.png" alt="sky">
+
+</body>
+</html>
